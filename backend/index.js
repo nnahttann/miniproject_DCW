@@ -11,7 +11,7 @@ const bcrypt = require('bcrypt')
 const db = require('./database.js')
 let users = db.users
 
-let students = {
+let products = {
     list:
         [
             { id: "6135512060", name: 'Natthanon', surname: 'Narit', major: "CoE", GPA: 3.50 },
@@ -27,57 +27,57 @@ router.use(cors({ origin: 'http://localhost:3000', credentials: true }))
 router.use(express.json())
 router.use(express.urlencoded({ extended: false }))
 
-router.route('/students')
-    .get((req, res) => res.json(students))
+router.route('/products')
+    .get((req, res) => res.json(products))
     .post((req, res) => {
         console.log(req.body)
-        let newStudent = {}
-        newStudent.id = (students.list.length) ? students.list[students.list.length - 1].id + 1 : 1
-        newStudent.name = req.body.name
-        newStudent.surname = req.body.surname
-        newStudent.major = req.body.major
-        newStudent.GPA = req.body.GPA
-        students = { list: [...students.list, newStudent] }
-        res.json(students)
+        let newProducts = {}
+        newProducts.id = (products.list.length) ? products.list[products.list.length - 1].id + 1 : 1
+        newProducts.name = req.body.name
+        newProducts.surname = req.body.surname
+        newProducts.major = req.body.major
+        newProducts.GPA = req.body.GPA
+        products = { list: [...products.list, newProducts] }
+        res.json(products)
     })
 
-router.route('/students/:student_id') //params
+router.route('/products/:products_id') //params
     .get((req, res) => {
-        let id = students.list.findIndex((item) => (+item.id === +req.params.student_id))
+        let id = products.list.findIndex((item) => (+item.id === +req.params.products_id))
 
         if (id === -1) {
             res.send('Not Found')
         }
         else {
-            res.json(students.list[id])
+            res.json(products.list[id])
         }
 
 
     })
     .put((req, res) => {
-        let id = students.list.findIndex((item) => (+item.id === +req.params.student_id))
+        let id = products.list.findIndex((item) => (+item.id === +req.params.products_id))
         if (id === -1) {
             res.send('Not Found')
         }
         else {
-            students.list[id].name = req.body.name
-            students.list[id].surname = req.body.surname
-            students.list[id].major = req.body.major
-            students.list[id].GPA = req.body.GPA
-            res.json(students)
+            products.list[id].name = req.body.name
+            products.list[id].surname = req.body.surname
+            products.list[id].major = req.body.major
+            products.list[id].GPA = req.body.GPA
+            res.json(products)
         }
 
 
     })
     .delete((req, res) => {
 
-        let id = students.list.findIndex((item) => (+item.id === +req.params.student_id))
+        let id = products.list.findIndex((item) => (+item.id === +req.params.products_id))
         if (id === -1) {
             res.send('Not Found')
         }
         else {
-            students.list = students.list.filter((item) => +item.id !== +req.params.student_id)
-            res.json(students)
+            products.list = products.list.filter((item) => +item.id !== +req.params.products_id)
+            res.json(products)
         }
     })
 
@@ -129,12 +129,6 @@ router.get('/profile',
         res.send(req.user)
     });
 
-router.get('/foo',
-    passport.authenticate('jwt', { session: false }),
-    (req, res, next) => {
-        return res.json({ message: "Foo" })
-    });
-
 router.post('/register',
     async (req, res) => {
         try {
@@ -160,7 +154,6 @@ router.get('/', (req, res, next) => {
     res.send('Respond without authentication');
 });
 
-
 // Error Handler
 app.use((err, req, res, next) => {
     let statusCode = err.status || 500
@@ -174,5 +167,5 @@ app.use((err, req, res, next) => {
 });
 
 // Start Server
-app.listen(port, () => console.log(`Server is running on port ${port}`))
+app.listen(port, () => console.log(`Server is running on port ...${port}`))
 
