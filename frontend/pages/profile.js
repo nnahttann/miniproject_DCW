@@ -40,8 +40,9 @@ const Profile1 = ({ token }) => {
                 <div/>
                 <div/>
                 <h1 className=" text-[#00ADB5] text-6xl flex flex-col items-center" >User profile</h1>
-                <div className=" text-[#EEEEEE] text-2xl flex flex-col items-center" >
-                    <b>Token:</b> {token.substring(0, 15)}... <br /><br />
+                <div className=" text-[#EEEEEE] text-2xl flex flex-col items-center" >  <br/>
+                    {/* <b>Token:</b> {token.substring(0, 15)}... <br /><br /> */}
+                    
                     This route is protected by token, user is required to login first.
                     <br/>
                     Otherwise, it will be redirect to Login page

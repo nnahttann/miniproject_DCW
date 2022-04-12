@@ -38,6 +38,17 @@ export default function Register({ token }) {
 
     const registerForm = () => (
         <div className="flex flex-col text-[#EEE]">
+         <div>
+                Name:
+            </div>
+            <div className="flex flex-col">
+                <input className="text-2xl text-[#00ADB5] bg-[#EEEEEE] rounded-lg mx-2 pl-4 font-bold outline-[#00ADB5]"
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+            </div>
             <div>
                 Username:
             </div>
@@ -45,7 +56,7 @@ export default function Register({ token }) {
                 <input className="text-2xl text-[#00ADB5] bg-[#EEEEEE] rounded-lg mx-2 pl-4 font-bold outline-[#00ADB5]"
                     type="text"
                     name="username"
-                    placeholder="username"
+                    placeholder="Username"
                     onChange={(e) => setUsername(e.target.value)}
                 />
             </div>
@@ -56,7 +67,7 @@ export default function Register({ token }) {
                 <input className="text-2xl text-[#00ADB5] bg-[#EEEEEE] rounded-lg mx-2 pl-4 font-bold outline-[#00ADB5]" 
                     type="email"
                     name="email"
-                    placeholder="email"
+                    placeholder="Email"
                     onChange={(e) => setEmail(e.target.value)} />
             </div>
             <div>
@@ -66,8 +77,19 @@ export default function Register({ token }) {
                 <input className="text-2xl text-[#00ADB5] bg-[#EEEEEE] rounded-lg mx-2 pl-4 font-bold outline-[#00ADB5]"
                     type="password"
                     name="password"
-                    placeholder="password"
+                    placeholder="Password"
                     onChange={(e) => setPassword(e.target.value)} />
+            </div>
+            <div>
+                Phone:
+            </div>
+            <div className="flex flex-col">
+                <input className="text-2xl text-[#00ADB5] bg-[#EEEEEE] rounded-lg mx-2 pl-4 font-bold outline-[#00ADB5]"
+                    type="text"
+                    name="phone"
+                    placeholder="Phone"
+                    onChange={(e) => setUsername(e.target.value)}
+                />
             </div>
 
         </div>

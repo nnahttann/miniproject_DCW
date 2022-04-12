@@ -34,7 +34,7 @@ export default function Login({ token }) {
                 <input className="text-2xl text-[#00ADB5] bg-[#EEEEEE] rounded-lg mx-2 pl-4 font-bold outline-[#00ADB5]"
                     type="text"
                     name="username"
-                    placeholder="username"
+                    placeholder="Username"
                     onChange={(e) => setUsername(e.target.value)}
                 />
             </div>
@@ -43,7 +43,7 @@ export default function Login({ token }) {
                 <input className="text-2xl text-[#00ADB5] bg-[#EEEEEE] rounded-lg mx-2 pl-4 font-bold outline-[#00ADB5]"
                     type="password"
                     name="password"
-                    placeholder="password"
+                    placeholder="Password"
                     onChange={(e) => setPassword(e.target.value)}
                 />
             </div><br/>
@@ -77,10 +77,10 @@ export default function Login({ token }) {
                 <Navbar /><br />
         
                 <h1 className=" text-[#00ADB5] text-6xl flex flex-col items-center">Login</h1>
-                <div className="text-xl text-[#EEEEEE]">
+                {/* <div className="text-xl text-[#EEEEEE]">
                     <b>Token:</b> {token.substring(0, 15)}...
                     <button className="flex flex-col items-center w-1/4 text-xl bg-[#00ADB5] font-bold text-[#222831] rounded-lg " onClick={copyText}> Copy token </button>
-                </div>
+                </div> */}
                 <br />
                 <div className="flex flex-row w-3/4 text-xs" >Status: {status}</div>
                 <br />
