@@ -133,8 +133,8 @@ router.get('/profile',
 router.post("/register", async (req, res) => {
     try {
         const SALT_ROUND = 10;
-        const { name, surname, username, email, password, phone } = req.body;
-        if (!name || !username || !email || !password || !phone)
+        const { username, email, password, phone } = req.body;
+        if ( !username || !email || !password )
             return res.json({ message: "Cannot register with empty string" });
         if (db.checkExistingUser(username) !== db.NOT_FOUND)
             return res.json({ message: "Duplicated user" });

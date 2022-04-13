@@ -37,7 +37,7 @@ export default function Login({ token }) {
                 <title>Login Page</title>
             </Head>
             <div className="flex flex-col justify-start items-center h-screen w-screen bg-[#393E46]">
-                <div className="flex flex-col text-[#EEEEEE] text-2xl font-bold w3/4 uppercase rounded-t-xl">
+                <div className="flex flex-col text-[#EEEEEE] text-2xl font-bold w3/4 uppercase">
                     <br />
                     <Navbar /><br />
                     <div />
