@@ -39,7 +39,7 @@ export default function Register({ token }) {
     const registerForm = () => (
         <div className="flex flex-col text-[#EEE]">
          <div>
-                Name:
+         <label>Name</label>
             </div>
             <div className="flex flex-col">
                 <input className="text-2xl text-[#00ADB5] bg-[#EEEEEE] rounded-lg mx-2 pl-4 font-bold outline-[#00ADB5]"
@@ -50,7 +50,7 @@ export default function Register({ token }) {
                 />
             </div>
             <div>
-                Username:
+            <label>Username</label>
             </div>
             <div className="flex flex-col">
                 <input className="text-2xl text-[#00ADB5] bg-[#EEEEEE] rounded-lg mx-2 pl-4 font-bold outline-[#00ADB5]"
@@ -61,7 +61,7 @@ export default function Register({ token }) {
                 />
             </div>
             <div>
-                Email:
+            <label>Email</label>
             </div>
             <div className="flex flex-col font-bold">
                 <input className="text-2xl text-[#00ADB5] bg-[#EEEEEE] rounded-lg mx-2 pl-4 font-bold outline-[#00ADB5]" 
@@ -71,7 +71,7 @@ export default function Register({ token }) {
                     onChange={(e) => setEmail(e.target.value)} />
             </div>
             <div>
-                Password:
+            <label>Password</label>
             </div>
             <div className="flex flex-col ">
                 <input className="text-2xl text-[#00ADB5] bg-[#EEEEEE] rounded-lg mx-2 pl-4 font-bold outline-[#00ADB5]"
@@ -81,7 +81,7 @@ export default function Register({ token }) {
                     onChange={(e) => setPassword(e.target.value)} />
             </div>
             <div>
-                Phone:
+            <label>Phone</label>
             </div>
             <div className="flex flex-col">
                 <input className="text-2xl text-[#00ADB5] bg-[#EEEEEE] rounded-lg mx-2 pl-4 font-bold outline-[#00ADB5]"
@@ -109,12 +109,6 @@ export default function Register({ token }) {
                 <div/>
                 
                 <h1 className=" text-[#00ADB5] text-6xl flex flex-col items-center" >Register</h1>
-                <div className="text-xl text-[#EEEEEE]"><b>Token:</b> {token.substring(0, 15)}...
-                <button className="flex flex-col items-center w-1/4 text-xl bg-[#00ADB5] font-bold text-[#222831] rounded-lg "
-                        onClick={() => { navigator.clipboard.writeText(token) }}>
-                        Copy token
-                </button>
-                </div>
                 <br />
                 <div className="flex flex-row w-3/4 text-xs" >Status: {status}</div>
                 <br />

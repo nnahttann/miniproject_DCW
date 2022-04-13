@@ -40,9 +40,14 @@ const Profile1 = ({ token }) => {
                 <div/>
                 <div/>
                 <h1 className=" text-[#00ADB5] text-6xl flex flex-col items-center" >User profile</h1>
+                <br/><br/>
+                <div className="text-3xl text-[#EEEEEE]"><b>Token:</b> {token.substring(0, 15)}...
+                <button className="flex flex-col items-center w-3/4 uppercase text-2xl bg-[#00ADB5] font-bold text-[#222831] rounded-lg "
+                        onClick={() => { navigator.clipboard.writeText(token) }}>
+                        Copy token
+                </button>
+                </div>
                 <div className=" text-[#EEEEEE] text-2xl flex flex-col items-center" >  <br/>
-                    {/* <b>Token:</b> {token.substring(0, 15)}... <br /><br /> */}
-                    
                     This route is protected by token, user is required to login first.
                     <br/>
                     Otherwise, it will be redirect to Login page
