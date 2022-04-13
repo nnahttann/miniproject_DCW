@@ -19,23 +19,24 @@ export default function Logout({ token }) {
         let result = await axios.get(`${config.URL}/logout`, { withCredentials: true })
         setStatus("Logout successful")
     }
- 
+
     return (
         <Layout>
             <Head>
                 <title>User profile</title>
             </Head>
-            <div className="flex flex-col justify-start w3/4 items-center h-screen w-screen bg-[#393E46]">   
-            <div className="text-[#EEEEEE] text-2xl font-bold w3/4 uppercase">
-                <br />
-                <Navbar /><br />
-                <div/>
-                <div/>
-
-                <h1 className=" text-[#00ADB5] text-6xl flex flex-col items-center">Logout</h1>
-                <div><br />
-                    <h2 className="flex flex-col items-center text-5xl"> {status}  </h2>
-                </div>
+            <div className="flex flex-col justify-start w3/4 items-center h-screen w-screen bg-[#393E46]">
+                <div className="text-[#EEEEEE] text-2xl font-bold w3/4 uppercase">
+                    <br />
+                    <Navbar /><br />
+                    <div />
+                    <div />
+                    <div>
+                        <span className=" text-[#00ADB5] text-6xl flex flex-col text-center mt-20 animate-bounce">Logout</span>
+                    </div>
+                    <div className='pt-4'><br />
+                        <span className="flex flex-col items-center text-4xl animate-pulse"> {status}  </span>
+                    </div>
                 </div>
             </div>
         </Layout>

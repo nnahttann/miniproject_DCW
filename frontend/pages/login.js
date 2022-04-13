@@ -40,15 +40,15 @@ export default function Login({ token }) {
                 <div className="flex flex-col text-[#EEEEEE] text-2xl font-bold w3/4 uppercase">
                     <br />
                     <Navbar /><br />
-                    <div />
+                    <div/>
                     <div>
-                        <span className=" text-[#00ADB5] text-6xl flex flex-col text-center mt-20">Login</span>
+                        <span className=" text-[#00ADB5] text-6xl flex flex-col text-center mt-20 animate-bounce">Login</span>
                     </div>
                     {/* <div className="text-xl text-[#EEEEEE]">
                     <b>Token:</b> {token.substring(0, 15)}...
                     <button className="flex flex-col items-center w-1/4 text-xl bg-[#00ADB5] font-bold text-[#222831] rounded-lg " onClick={copyText}> Copy token </button>
                 </div> */}
-                    <div className="text-xs my-6 text-m italic" >Status: {status}</div>
+                    <div className="text-xs my-6 text-m italic animate-pulse" >Status: {status}</div>
 
                     <div className="flex flex-col justify-start text-[#EEE]">
                         <div className='flex flex-col justify-center my-4'>

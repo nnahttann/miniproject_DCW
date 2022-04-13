@@ -28,7 +28,7 @@ const Profile1 = ({ token }) => {
         }
 
     }
- 
+
     return (
         <Layout>
             <Head>
@@ -36,22 +36,23 @@ const Profile1 = ({ token }) => {
             </Head>
             <div className="flex flex-col justify-start w3/4 items-center h-screen w-screen bg-[#393E46] text-[#EEEEEE] text-2xl font-bold w3/4 uppercase">
                 <br />
-                <Navbar /><br />
-                <div/>
-                <div/>
-                <h1 className=" text-[#00ADB5] text-6xl flex flex-col items-center" >User profile</h1>
-                <br/><br/>
-                <div className="text-3xl text-[#EEEEEE]"><b>Token:</b> {token.substring(0, 15)}...
-                <button className="flex flex-col items-center w-3/4 uppercase text-2xl bg-[#00ADB5] font-bold text-[#222831] rounded-lg "
-                        onClick={() => { navigator.clipboard.writeText(token) }}>
-                        Copy token
-                </button>
+                <Navbar />
+                <br />
+                <span className=" text-[#00ADB5] text-6xl flex flex-col text-center my-20 animate-bounce" >User profile</span>
+                <div className="text-2xl text-[#EEEEEE]"><b>Token:</b> {token.substring(0, 15)}...
+                    <div className="flex flex-col items-center uppercase">
+                        <button className="flex flex-col items-center w-3/4 uppercase text-2xl bg-[#00ADB5] font-bold text-[#222831] rounded-lg "
+                            onClick={() => { navigator.clipboard.writeText(token) }}>
+                            Copy token
+                        </button>
+                    </div>
                 </div>
-                <div className=" text-[#EEEEEE] text-2xl flex flex-col items-center" >  <br/>
+                <div className=" text-[#EEEEEE] text-2xl mt-12 flex flex-col items-center" >  <br />
                     This route is protected by token, user is required to login first.
-                    <br/>
+                    <br />
                     Otherwise, it will be redirect to Login page
-                    <br/><br/>
+                </div>
+                <div className=" text-[#EEEEEE] text-2xl my-12 flex flex-col items-center" >
                     {JSON.stringify(user)}
                 </div>
             </div>

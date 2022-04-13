@@ -48,9 +48,9 @@ export default function Register({ token }) {
                     <div />
                     <div />
                     <div>
-                        <span className=" text-[#00ADB5] text-6xl flex flex-col text-center" >Register</span>
+                        <span className=" text-[#00ADB5] text-6xl flex flex-col text-center animate-bounce" >Register</span>
                     </div>
-                    <div className="text-xs my-6 text-m italic" >Status: {status}</div>
+                    <div className="text-xs my-6 text-m italic animate-pulse" >Status: {status}</div>
                     <div className="flex flex-col justify-start text-[#EEE]">
                         <div className='flex flex-col justify-center my-4'>
                             <label>Name</label>
@@ -112,7 +112,6 @@ export default function Register({ token }) {
                     </div>
                 </div>
             </div>
-
         </Layout>
     )
 }
