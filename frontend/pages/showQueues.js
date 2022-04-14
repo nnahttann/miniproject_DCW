@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 import Navbar from '../components/navbar'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import stdAuth from '../components/queuesAuth'
+import queuesAuth from '../components/queuesAuth'
 import config from '../config/config'
 
 
@@ -61,7 +61,7 @@ const showQueues = ({ token }) => {
         </Layout>
     )
 }
-export default stdAuth(showQueues)
+export default queuesAuth(showQueues)
 
 export function getServerSideProps({ req, res }) {
     return { props: { token: req.cookies.token || "" } };

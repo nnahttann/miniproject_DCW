@@ -58,7 +58,7 @@ router.route('/queues/:queue_id') //params
         else {
             queues.list[id].name = req.body.name
             queues.list[id].phone = req.body.phone
-            newQueue.license = req.body.license
+            queues.list[id].license = req.body.license
             res.json(queues)
         }
 

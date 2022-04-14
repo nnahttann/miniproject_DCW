@@ -24,11 +24,6 @@ const GetConfig = () => {
                     computer engineering <br />
                 </span>
             </div>
-            <br />
-            <div className="flex flex-col text-[#EEEEEE] text-2xl text-center font-bold w3/4 uppercase animate-pulse">
-                <a href="https://www.apple.com/pro-display-xdr/" > Youtube link</a>
-                <a href="https://www.apple.com/pro-display-xdr/" >Medium link</a>
-            </div>
         </div>
         <div className='w-screen'>
             <Footer />
