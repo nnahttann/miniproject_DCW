@@ -11,10 +11,10 @@ const bcrypt = require('bcrypt')
 const db = require('./database.js')
 let users = db.users
 
-let products = {
+let queues = {
     list:
         [
-            { id: "6135512060", name: 'Natthanon', surname: 'Narit', major: "CoE", GPA: 3.50 },
+            { id: 1, name: 'Natthanon Narit', phone: 'xxx-xxx-xxxx', license: "1xx xxxx" },
         ]
 }
 require('./passport.js')
@@ -27,59 +27,54 @@ router.use(cors({ origin: 'http://localhost:3000', credentials: true }))
 router.use(express.json())
 router.use(express.urlencoded({ extended: false }))
 
-router.route('/products')
-    .get((req, res) => res.json(products))
+router.route('/queues')
+    .get((req, res) => res.json(queues))
     .post((req, res) => {
         console.log(req.body)
-        let newProducts = {}
-        newProducts.id = (products.list.length) ? products.list[products.list.length - 1].id + 1 : 1
-        newProducts.name = req.body.name
-        newProducts.surname = req.body.surname
-        newProducts.major = req.body.major
-        newProducts.GPA = req.body.GPA
-        products = { list: [...products.list, newProducts] }
-        res.json(products)
+        let newQueue = {}
+        newQueue.id = (queues.list.length) ? queues.list[queues.list.length - 1].id + 1 : 1
+        newQueue.name = req.body.name
+        newQueue.phone = req.body.phone
+        newQueue.license = req.body.license
+        queues = { list: [...queues.list, newQueue] }
+        res.json(queues)
     })
 
-router.route('/products/:products_id') //params
+router.route('/queues/:queue_id') //params
     .get((req, res) => {
-        let id = products.list.findIndex((item) => (+item.id === +req.params.products_id))
-
+        let id = queues.list.findIndex((item) => (+item.id === +req.params.queue_id))
         if (id === -1) {
             res.send('Not Found')
         }
         else {
-            res.json(products.list[id])
+            res.json(queues.list[id])
         }
-
-
     })
     .put((req, res) => {
-        let id = products.list.findIndex((item) => (+item.id === +req.params.products_id))
+        let id = queues.list.findIndex((item) => (+item.id === +req.params.queue_id))
         if (id === -1) {
             res.send('Not Found')
         }
         else {
-            products.list[id].name = req.body.name
-            products.list[id].surname = req.body.surname
-            products.list[id].major = req.body.major
-            products.list[id].GPA = req.body.GPA
-            res.json(products)
+            queues.list[id].name = req.body.name
+            queues.list[id].phone = req.body.phone
+            newQueue.license = req.body.license
+            res.json(queues)
         }
 
 
     })
     .delete((req, res) => {
-
-        let id = products.list.findIndex((item) => (+item.id === +req.params.products_id))
+        let id = queues.list.findIndex((item) => (+item.id === +req.params.queue_id))
         if (id === -1) {
             res.send('Not Found')
         }
         else {
-            products.list = products.list.filter((item) => +item.id !== +req.params.products_id)
-            res.json(products)
+            queues.list = queues.list.filter((item) => +item.id !== +req.params.queue_id)
+            res.json(queues)
         }
     })
+
 router.post("/login", (req, res, next) => {
     passport.authenticate("local", { session: false }, (err, user, info) => {
         console.log("Login: ", req.body, user, err, info);
@@ -130,25 +125,23 @@ router.get('/profile',
         res.send(req.user)
     });
 
-router.post("/register", async (req, res) => {
-    try {
-        const SALT_ROUND = 10;
-        const { username, email, password, phone } = req.body;
-        if ( !username || !email || !password )
-            return res.json({ message: "Cannot register with empty string" });
-        if (db.checkExistingUser(username) !== db.NOT_FOUND)
-            return res.json({ message: "Duplicated user" });
-
-        let id = users.users.length
-            ? users.users[users.users.length - 1].id + 1
-            : 1;
-        hash = await bcrypt.hash(password, SALT_ROUND);
-        users.users.push({ id, username, password: hash, email });
-        res.status(200).json({ message: "Register success" });
-    } catch {
-        res.status(422).json({ message: "Cannot register" });
-    }
-});
+router.post('/register',
+    async (req, res) => {
+        try {
+            const SALT_ROUND = 10
+            const { username, email, password } = req.body
+            if (!username || !email || !password)
+                return res.json({ message: "Cannot register with empty string" })
+            if (db.checkExistingUser(username) !== db.NOT_FOUND)
+                return res.json({ message: "Duplicated user" })
+            let id = (users.users.length) ? users.users[users.users.length - 1].id + 1 : 1
+            hash = await bcrypt.hash(password, SALT_ROUND)
+            users.users.push({ id, username, password: hash, email })
+            res.status(200).json({ message: "Register success" })
+        } catch {
+            res.status(422).json({ message: "Cannot register" })
+        }
+    })
 
 router.get('/alluser', (req, res) => res.json(db.users.users))
 
@@ -169,5 +162,4 @@ app.use((err, req, res, next) => {
 });
 
 // Start Server
-app.listen(port, () => console.log(`Server is running on port ...${port}`))
-
+app.listen(port, () => console.log(`Server is running on port ${port}`))

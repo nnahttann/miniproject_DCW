@@ -1,23 +1,37 @@
-import Head from 'next/head' 
-import Layout from '../components/layout' 
-import Navbar from '../components/navbar'
+import Head from 'next/head'
+import Layout from '../components/layout'
+import Link from 'next/link'
+import Footer from '../components/footer'
 
 export default function Home({ token }) {
- 
+
   return (
     <Layout>
-    <Head>
+      <Head>
         <title>First Page</title>
-    </Head>
-    <div className="flex flex-col justify-start w3/4 items-center h-screen w-screen bg-[#393E46] text-[#EEEEEE] text-2xl font-bold w3/4 uppercase">
-                <br />
-                <Navbar /><br />
-                <div/>
-                <div/>
-        <h1 className=" text-[#00ADB5] text-6xl flex flex-col items-center">Home page</h1>
-        No login required!
-    </div>
-</Layout>
+      </Head>
+      <div className="flex flex-col justify-start w3/4 items-center h-screen w-screen bg-[#393E46] font-bold">
+
+        <div className='flex flex-col mt-36 uppercase text-8xl text-center'>
+          <span className=" text-[#00ADB5] flex flex-col items-center animate-bounce">Car Wash queue</span>
+        </div>
+        <div>
+          <div className='flex flex-col justify-around mt-24 '>
+          <span className=" text-[#EEE] text-2xl mb-4 flex flex-col uppercase ">Already a member</span>
+            <Link href='/login'>
+              <button className="w-96 flex flex-col items-center text-3xl bg-[#00ADB5] font-bold text-[#222831] hover:text-[#00ADB5] dark:md:hover:bg-[#222831] rounded-lg uppercase" >Log in</button>
+            </Link>
+            <span className=" text-[#EEE] text-2xl mt-8 mb-4 flex flex-col uppercase ">Not a member</span>
+            <Link href='/register'>
+              <button className="w-96 flex flex-col items-center text-3xl bg-[#00ADB5] font-bold text-[#222831] hover:text-[#00ADB5] dark:md:hover:bg-[#222831] rounded-lg uppercase">Register</button>
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className='w-screen'>
+            <Footer />
+        </div>
+    </Layout>
   )
 }
 

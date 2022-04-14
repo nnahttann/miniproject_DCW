@@ -1,6 +1,7 @@
 import Layout from '../components/layout'
 import Head from 'next/head'
 import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 
 const GetConfig = () => {
     return (<Layout>
@@ -20,7 +21,7 @@ const GetConfig = () => {
                 <span>
                     Natthanon Narit<br />
                     Student Id : 6135512060<br />
-                    college of computing<br />
+                    computer engineering <br />
                 </span>
             </div>
             <br />
@@ -28,13 +29,10 @@ const GetConfig = () => {
                 <a href="https://www.apple.com/pro-display-xdr/" > Youtube link</a>
                 <a href="https://www.apple.com/pro-display-xdr/" >Medium link</a>
             </div>
-            <div className="flex flex-col text-[#00ADB5] mt-4 text-2xl text-center font-bold w3/4 uppercase"> 
-            <span>
-             part of the course 240-311 Distributed Computing and Web Technologies</span>
-            </div>
-            
         </div>
-
+        <div className='w-screen'>
+            <Footer />
+        </div>
     </Layout>)
 }
 

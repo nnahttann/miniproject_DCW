@@ -4,11 +4,15 @@ import { useState } from "react";
 import Navbar from "../components/navbar";
 import axios from "axios";
 import config from "../config/config";
+import { useRouter } from 'next/router'
+import Footer from '../components/footer'
 
 export default function Login({ token }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [status, setStatus] = useState("");
+    const router = useRouter()
+
     const [remember, setRemember] = useState(false);
     const login = async (req, res) => {
         try {
@@ -16,6 +20,7 @@ export default function Login({ token }) {
             console.log("result: ", result);
             console.log("result.data:  ", result.data);
             console.log("token:  ", token);
+            router.push('/showQueues')
             setStatus(result.status + ": " + result.data.user.username);
         }
         catch (e) {
@@ -40,7 +45,7 @@ export default function Login({ token }) {
                 <div className="flex flex-col text-[#EEEEEE] text-2xl font-bold w3/4 uppercase">
                     <br />
                     <Navbar /><br />
-                    <div/>
+                    <div />
                     <div>
                         <span className=" text-[#00ADB5] text-6xl flex flex-col text-center mt-20 animate-bounce">Login</span>
                     </div>
@@ -86,7 +91,9 @@ export default function Login({ token }) {
                     </div>
                 </div>
             </div>
-
+            <div className='w-screen'>
+                <Footer/>
+            </div>
         </Layout>
     );
 }
