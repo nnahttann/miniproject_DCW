@@ -14,7 +14,8 @@ const GetConfig = () => {
                 <Navbar /><br />
                 <span className=" text-[#00ADB5] text-5xl flex flex-col text-center mt-8 animate-bounce">About Me</span>
             </div>
-            <span className=" text-[#00ADB5] text-4xl mt-36 font-bold w3/4 uppercase animate-pulse">make by</span>
+            <div className="flex flex-col items-center text-[#EEEEEE] text-2xl font-bold w-full uppercase">
+                <span className=" text-[#00ADB5] text-4xl mt-20 font-bold w3/4 uppercase animate-pulse">make by</span>
             <br />
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgHkVbBgGO9K-4NpZ8lSJr1VPHGFQFIpF9-A_mZaMRnk_3swoEqiGxUR4xzN5Cnu8e-ZA&usqp=CAU" width="200" height="150"></img>
             <div className="flex flex-col text-[#EEEEEE] text-xl text-center mt-8 font-bold w3/4 uppercase">
@@ -24,6 +25,8 @@ const GetConfig = () => {
                     computer engineering <br />
                 </span>
             </div>
+            </div>
+            
         </div>
         <div className='w-screen'>
             <Footer />

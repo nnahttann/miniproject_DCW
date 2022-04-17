@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import Navbar from '../components/navbar'
 import axios from 'axios'
 import config from '../config/config'
+import Footer from '../components/footer'
 
 
 export default function Register({ token }) {
@@ -83,10 +84,13 @@ export default function Register({ token }) {
                                 onChange={(e) => setPassword(e.target.value)} />
                         </div>
                     </div>
-                    <div className="flex flex-col items-center mt-8"><br />
+                    <div className="flex flex-col items-center mt-4 mb-4"><br />
                         <button className="w-2/4 text-2xl bg-[#00ADB5] font-bold text-[#222831] hover:text-[#00ADB5] dark:md:hover:bg-[#222831] rounded-lg uppercase" onClick={register}>Register</button>
                     </div>
                 </div>
+                <div className='w-screen'>
+            <Footer />
+        </div>
             </div>
         </Layout>
     )

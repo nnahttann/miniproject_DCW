@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import withAuth from '../components/withAuth'
 import config from '../config/config'
+import Footer from '../components/footer'
 
 const Profile1 = ({ token }) => {
 
@@ -52,8 +53,11 @@ const Profile1 = ({ token }) => {
                     <br />
                     Otherwise, it will be redirect to Login page
                 </div>
-                <div className=" text-[#EEEEEE] text-2xl my-12 flex flex-col items-center" >
+                <div className=" text-[##00ADB5] text-2xl my-12 flex flex-col items-center" >
                     {JSON.stringify(user)}
+                </div>
+                <div className='w-screen h-screen'>
+                    <Footer />
                 </div>
             </div>
         </Layout>

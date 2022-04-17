@@ -16,8 +16,8 @@ export default function Home({ token }) {
           <span className=" text-[#00ADB5] flex flex-col items-center animate-bounce">Car Wash queue</span>
         </div>
         <div>
-          <div className='flex flex-col justify-around mt-24 '>
-          <span className=" text-[#EEE] text-2xl mb-4 flex flex-col uppercase ">Already a member</span>
+          <div className='flex flex-col justify-around mt-20 '>
+            <span className=" text-[#EEE] text-2xl mb-4 flex flex-col uppercase ">Already a member</span>
             <Link href='/login'>
               <button className="w-96 flex flex-col items-center text-3xl bg-[#00ADB5] font-bold text-[#222831] hover:text-[#00ADB5] dark:md:hover:bg-[#222831] rounded-lg uppercase" >Log in</button>
             </Link>
@@ -27,14 +27,14 @@ export default function Home({ token }) {
             </Link>
             <span className=" text-[#EEE] text-2xl mt-8 mb-4 flex flex-col uppercase ">Show Queues</span>
             <Link href='/showQueues'>
-              <button className="w-96 flex flex-col items-center text-3xl bg-[#00ADB5] font-bold text-[#222831] hover:text-[#00ADB5] dark:md:hover:bg-[#222831] rounded-lg uppercase">Quesue</button>
+              <button className="w-96 flex flex-col items-center mb-12 text-3xl bg-[#00ADB5] font-bold text-[#222831] hover:text-[#00ADB5] dark:md:hover:bg-[#222831] rounded-lg uppercase">Queue</button>
             </Link>
           </div>
+        </div> <div className='w-screen'>
+          <Footer />
         </div>
       </div>
-      {/* <div className='w-screen'>
-            <Footer />
-        </div> */}
+
     </Layout>
   )
 }
