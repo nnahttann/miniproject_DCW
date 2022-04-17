@@ -25,12 +25,16 @@ export default function Home({ token }) {
             <Link href='/register'>
               <button className="w-96 flex flex-col items-center text-3xl bg-[#00ADB5] font-bold text-[#222831] hover:text-[#00ADB5] dark:md:hover:bg-[#222831] rounded-lg uppercase">Register</button>
             </Link>
+            <span className=" text-[#EEE] text-2xl mt-8 mb-4 flex flex-col uppercase ">Show Queues</span>
+            <Link href='/showQueues'>
+              <button className="w-96 flex flex-col items-center text-3xl bg-[#00ADB5] font-bold text-[#222831] hover:text-[#00ADB5] dark:md:hover:bg-[#222831] rounded-lg uppercase">Quesue</button>
+            </Link>
           </div>
         </div>
       </div>
-      <div className='w-screen'>
+      {/* <div className='w-screen'>
             <Footer />
-        </div>
+        </div> */}
     </Layout>
   )
 }

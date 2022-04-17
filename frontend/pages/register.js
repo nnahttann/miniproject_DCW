@@ -47,6 +47,7 @@ export default function Register({ token }) {
                     <div />
                     <div>
                         <span className=" text-[#00ADB5] text-6xl mt-20 flex flex-col text-center animate-bounce" >Register</span>
+                        <span className=" text-[#EEE] text-2xl  flex flex-col text-center" >For admin</span>
                     </div>
                     <div className="text-xs my-6 text-m italic animate-pulse" >Status: {status}</div>
                     <div className="flex flex-col justify-start text-[#EEE]">
@@ -82,8 +83,8 @@ export default function Register({ token }) {
                                 onChange={(e) => setPassword(e.target.value)} />
                         </div>
                     </div>
-                    <div className="flex flex-col items-center mb-12"><br />
-                        <button className="flex flex-col items-center w-1/4 text-2xl bg-[#00ADB5] font-bold text-[#222831] hover:text-[#00ADB5] dark:md:hover:bg-[#222831] rounded-lg uppercase" onClick={register}>Register</button>
+                    <div className="flex flex-col items-center mt-8"><br />
+                        <button className="w-2/4 text-2xl bg-[#00ADB5] font-bold text-[#222831] hover:text-[#00ADB5] dark:md:hover:bg-[#222831] rounded-lg uppercase" onClick={register}>Register</button>
                     </div>
                 </div>
             </div>

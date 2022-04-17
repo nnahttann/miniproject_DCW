@@ -15,6 +15,7 @@ let queues = {
     list:
         [
             { id: 1, name: 'Natthanon Narit', phone: 'xxx-xxx-xxxx', license: "1xx xxxx" },
+            { id: 2, name: 'Natthanon', phone: 'xxx-xxx-xxxx', license: "2xx xxxx" },
         ]
 }
 require('./passport.js')

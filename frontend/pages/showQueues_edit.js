@@ -16,6 +16,7 @@ const editQueues = ({ token }) => {
         list:
             [
                 { id: 1, name: 'Natthanon', phone: 'xxx-xxx-xxxx', license: "1xx xxxx" },
+                { id: 2, name: 'Natthanon', phone: 'xxx-xxx-xxxx', license: "1xx xxxx" },
             ]
     })
     const [idEdit, setidEdit] = useState('')
@@ -35,37 +36,40 @@ const editQueues = ({ token }) => {
         console.log('Queues:', queues)
         if (queues.list && queues.list.length)
             return (queues.list.map((queues, index) =>
-            (<div className="flex flex-col mt-2 h-full h-full " key={index}>
+            (<div className="flex flex-col mt-2 h-full h-full items-center" key={index}>
                 <div className='w-full h-full'>
                     <span className=" text-[#00ADB5]">queue : </span>{index + 1}<br></br>
-                    <span className=" text-[#00ADB5]">Name  </span>{(+idEdit !== +queues.id) ? queues.name :
+                    <span className=" text-[#00ADB5]">Name  </span>
+                    {(+idEdit !== +queues.id) ? queues.name :
                         (<input type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}>
                         </input >)
                     } <br></br>
-                    <span className=" text-[#00ADB5]">Phone </span> {(+idEdit !== +queues.id) ? queues.phone :
+                    <span className=" text-[#00ADB5]">Phone </span> 
+                    {(+idEdit !== +queues.id) ? queues.phone :
                         (<input type="text"
                             value={phone}
                             onChange={(e) => setName(e.target.value)}>
                         </input >)
                     } <br></br>
-                    <span className=" text-[#00ADB5]"> License Plate </span>{(+idEdit !== +queues.id) ? queues.license :
+                    <span className=" text-[#00ADB5]"> License Plate </span>
+                    {(+idEdit !== +queues.id) ? queues.license :
                         (<input type="text"
                             value={license}
                             onChange={(e) => setName(e.target.value)}>
                         </input >)
                     } <br></br>
                 </div>
-                <button className="mr-4 p-2 mt-8 bg-red-400 hover:text-[#EEEEEE] rounded-lg drop-shadow-lg font-bold uppercase"
-                    onClick={() => deleteQueues(queues.id)} > Delete
+                <button className="flex flex-col mr-4 p-2 mt-8 w-3/4 text-2xl items-center bg-red-400 hover:text-[#EEEEEE] rounded-lg font-bold uppercase"
+                    onClick={() => deleteQueues(queues.id)} > Delete Queues
                 </button>
-                <button className="mr-4 p-2 mt-4 bg-yellow-500 hover:text-[#EEEEEE] rounded-lg drop-shadow-lg font-bold uppercase"
-                    onClick={() => updateQueues(queues.id)} > update
+                <button className="flex flex-col mr-4 p-2 w-3/4 text-2xl items-center mt-4 bg-yellow-500 hover:text-[#EEEEEE] rounded-lg font-bold uppercase"
+                    onClick={() => updateQueues(queues.id)} > update Queues
                 </button>
-                <button className="mr-4 p-2 mt-4 bg-blue-500 hover:text-[#EEEEEE] rounded-lg drop-shadow-lg font-bold transition motion-reduce:transition-none motion-reduce:hover:transform-none uppercase"
-                    onClick={() => editQueues(queues.id,queues.name,queues.phone,queues.license)} > edit
-                </button>
+                {/* <button className="mr-4 p-2 mt-4 bg-blue-500 hover:text-[#EEEEEE] rounded-lg drop-shadow-lg font-bold transition motion-reduce:transition-none motion-reduce:hover:transform-none uppercase"
+                    onClick={() => editQueues(queues.id, queues.name, queues.phone, queues.license)} > edit
+                </button> */}
 
             </div >)
             ))
@@ -174,7 +178,7 @@ const editQueues = ({ token }) => {
                             </div>
                         </div>
                         <div className="flex flex-col items-center">
-                            <button className="flex flex-col items-center w-1/4 my-8 text-2xl bg-[#00ADB5] font-bold text-[#222831] hover:text-[#00ADB5] dark:md:hover:bg-[#222831] rounded-lg uppercase" onClick={() => addQueues(name, phone, license)}>Add Queues</button>
+                            <button className="w-2/4 my-8 text-2xl bg-[#00ADB5] font-bold text-[#222831] hover:text-[#00ADB5] dark:md:hover:bg-[#222831] rounded-lg uppercase" onClick={() => addQueues(name, phone, license)}>Add Queues</button>
                         </div>
                     </div>
                 </div>

@@ -48,6 +48,7 @@ export default function Login({ token }) {
                     <div />
                     <div>
                         <span className=" text-[#00ADB5] text-6xl flex flex-col text-center mt-20 animate-bounce">Login</span>
+                        <span className=" text-[#EEE] text-2xl  flex flex-col text-center" >For admin</span>
                     </div>
                     {/* <div className="text-xl text-[#EEEEEE]">
                     <b>Token:</b> {token.substring(0, 15)}...
@@ -87,13 +88,13 @@ export default function Login({ token }) {
                         </div>
                     </div>
                     <div className="flex flex-col items-center">
-                        <button className="flex flex-col items-center w-1/4  text-2xl bg-[#00ADB5] font-bold text-[#222831] hover:text-[#00ADB5] dark:md:hover:bg-[#222831] rounded-lg uppercase" onClick={login}>Login</button>
+                        <button className="w-2/4 text-2xl bg-[#00ADB5] font-bold text-[#222831] hover:text-[#00ADB5] dark:md:hover:bg-[#222831] rounded-lg uppercase" onClick={login}>Login</button>
                     </div>
                 </div>
             </div>
-            <div className='w-screen'>
+            {/* <div className='w-screen h-full'>
                 <Footer/>
-            </div>
+            </div> */}
         </Layout>
     );
 }

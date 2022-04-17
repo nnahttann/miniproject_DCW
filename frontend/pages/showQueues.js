@@ -15,6 +15,7 @@ const showQueues = ({ token }) => {
         list:
             [
                 { id: 1, name: 'Natthanon', phone: 'xxx-xxx-xxxx', license: "1xx xxxx" },
+                { id: 2, name: 'Natthanon', phone: 'xxx-xxx-xxxx', license: "2xx xxxx" },
             ]
     })
     useEffect(() => {
@@ -28,10 +29,11 @@ const showQueues = ({ token }) => {
         console.log('Queues:', queues)
         if (queues.list && queues.list.length)
             return (queues.list.map((queues, index) =>
-            (<div key={index} >
-                Name : {queues.name} <br></br>
-                Phone : {queues.phone}  <br></br>
-                License Plate : {queues.license}  <br></br>
+            (<div className="mt-12" key={index} >
+            <span className=" text-[#00ADB5]">queue : </span> {index + 1}<br></br>
+            <span className=" text-[#00ADB5]">Name  </span>{queues.name}<br></br>
+            <span className=" text-[#00ADB5]">Phone </span>  {queues.phone}<br></br>
+            <span className=" text-[#00ADB5]"> License Plate </span> {queues.license}  <br></br>
             </div>)
             ))
         else {
@@ -53,7 +55,7 @@ const showQueues = ({ token }) => {
                     <span className=" text-[#00ADB5] text-6xl font-bold flex flex-col text-center mt-20 animate-bounce uppercase">Show Queues</span>
                 </div>
                 {JSON.stringify(queues.queues)}
-                <div className="flex flex-col text-[#EEEEEE] text-2xl font-bold w3/4 uppercase">
+                <div className="flex flex-col text-[#EEEEEE] text-2xl font-bold w3/4 uppercase mt-4">
                     {printQueues()}
                 </div>
 
