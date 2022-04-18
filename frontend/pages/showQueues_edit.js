@@ -76,7 +76,7 @@ const editQueues = ({ token }) => {
                     onClick={() => updateQueues(queues.id)} > update Queues
                 </button>
                 <button className="mr-4 p-2 mt-4 bg-blue-500 w-3/4 hover:text-[#EEEEEE] rounded-lg drop-shadow-lg font-bold transition motion-reduce:transition-none motion-reduce:hover:transform-none uppercase"
-                    onClick={() => editQueues(data.list, queues.id, queues.name, queues.phone, queues.license)} > edit
+                    onClick={() => editQueues(data.list, queues.id, queues.name, queues.phone, queues.license)} > edit Queues
                 </button>
 
             </div >)
